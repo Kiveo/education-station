@@ -1,0 +1,9 @@
+“Make a test web application.
+
+Use React to make an application.
+
+Use the JSON file to simulate an API call.
+
+The application should list schools, student, and teachers allowing the user to navigate between them.
+
+The purpose of this exercise is mainly to see how you handle data, design skills are a plus.”
