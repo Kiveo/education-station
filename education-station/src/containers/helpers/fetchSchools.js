@@ -1,8 +1,7 @@
 /**
 |--------------------------------------------------
-| Normally I'd do an asynchronous request here in response to an action, such as Thunk or SAGA.
-| Since we are using a non-async set of dummy data, I am skipping the Redux/Actions type setup. 
-| Also, I am not getting paid for this, so gotta be frugal with my time too ;)
+| // TODO decide
+| Sagas or Thunk? 
 |--------------------------------------------------
 */
 const requestPath = '/SchoolsTeachersStudents.json';

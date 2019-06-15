@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import fetchSchools from './helpers/fetchSchools';
 import Loader from '../components/content/Loader';
 import Header from '../components/content/Header';
 import WelcomeMessage from '../components/content/WelcomeMessage';
