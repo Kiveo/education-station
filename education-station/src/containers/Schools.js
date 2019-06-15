@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import Loader from '../components/content/Loader';
-import Header from '../components/content/Header';
-import WelcomeMessage from '../components/content/WelcomeMessage';
-import Title from '../components/content/Title';
-import './Schools.css';
+import { Header, Loader, Title, WelcomeMessage } from '../components/content';
 import School from '../components/School';
+import './Schools.css';
 
-export default class Schools extends Component {
+import { connect } from 'react-redux';
+
+class Schools extends Component {
   constructor() {
     super()
     this.state = {
@@ -54,3 +53,9 @@ export default class Schools extends Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+  return { schools: state.schools }  
+}
+
+export default connect(mapStateToProps)(Schools);
