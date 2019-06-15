@@ -9,3 +9,11 @@
   justify-content: center;
 }
 
+.schools-header {
+  flex: 1;
+}
+
+#school-list {
+  flex: 2;
+  background: grey;
+}
