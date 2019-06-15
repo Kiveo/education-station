@@ -59,7 +59,11 @@ Schools.propTypes = {
     Description: PropTypes.string.isRequired,
     IsOpen: PropTypes.bool,
     teachers: PropTypes.array,
-  })).isRequired,
+  })),
+};
+
+Schools.defaultProps = {
+  schools: [],
 };
 
 const mapStateToProps = state => ({ schools: state.schools });

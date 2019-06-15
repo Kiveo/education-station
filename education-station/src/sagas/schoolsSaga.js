@@ -1,16 +1,18 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { GET_SCHOOLS_REQUEST } from '../redux/constants/schoolConstants';
+import { GET_SCHOOLS_REQUEST, GET_SCHOOLS_SUCCESS } from '../redux/constants/schoolConstants';
 import fetchSchools from '../containers/helpers/fetchSchools';
 import { requestPath } from '../containers/api';
 
 // worker Saga
 function* getSchools() {
-  console.log(':::SAGA');
   try {
-    const schools = yield call(fetchSchools, requestPath);
-    yield put({ type: 'USER_FETCH_SUCCESS', schools });
+    const response = yield call(fetchSchools, requestPath);
+    if (!response) {
+      throw new Error('Failed to fetch schools');
+    }
+    yield put({ type: GET_SCHOOLS_SUCCESS, response });
   } catch (e) {
-    // simulating. May return to this later. // TODO
+    console.log(':::e', e.message);
     yield put({ type: 'GET_SCHOOLS_FAIL', message: e.message });
   }
 }

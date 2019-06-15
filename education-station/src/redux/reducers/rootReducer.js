@@ -12,7 +12,7 @@ function rootReducer(state = initialState, action) {
     }
 
     case GET_SCHOOLS_SUCCESS: {
-      return { ...state, schools: action.schools };
+      return { ...state, schools: action.response.Schools };
     }
 
     default:
