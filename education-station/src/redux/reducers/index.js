@@ -1,17 +1,19 @@
 import { GET_SCHOOLS } from '../constants/actionConstants';
 
 const initialState = {
-  schools: []
+  schools: [],
 };
 
 function rootReducer(state = initialState, action) {
-  console.log('reducer::action, ', action)
-  if (action.type === GET_SCHOOLS) {
-    return Object.assign({}, state, {
-      schools: state.schools.concat(action.payload)
-    });
+  console.log('reducer::action, ', action);
+  switch (action.type) {
+    case GET_SCHOOLS: {
+      return { ...state, schools: action.schools };
+    }
+
+    default:
+      return state;
   }
-  return state;
 }
 
 export default rootReducer;

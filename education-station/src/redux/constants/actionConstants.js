@@ -1,1 +1,2 @@
-export const GET_SCHOOLS = "GET_SCHOOLS";
+// eslint-disable-next-line import/prefer-default-export
+export const GET_SCHOOLS = 'GET_SCHOOLS';

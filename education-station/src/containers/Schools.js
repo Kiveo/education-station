@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
   Header, Loader, Title, WelcomeMessage,
 } from '../components/content';
 import School from '../components/School';
+import { getSchools } from '../redux/actions/index';
+
 import './Schools.css';
 
 class Schools extends Component {
@@ -13,6 +16,7 @@ class Schools extends Component {
       isLoading: false,
     };
   }
+
 
   render() {
     const { isLoading } = this.state;
@@ -45,8 +49,16 @@ class Schools extends Component {
   }
 }
 
-const mapStateToProps = state => ({ schools: state.schools });
+Schools.propTypes = {
+  schools: PropTypes.arrayOf(PropTypes.shape({
+    Id: PropTypes.number.isRequired,
+    Name: PropTypes.string.isRequired,
+    Description: PropTypes.string.isRequired,
+    IsOpen: PropTypes.bool,
+    teachers: PropTypes.array,
+  })).isRequired,
+};
 
-const mapDispatchToProps = dispatch => (dispatch('action'));
+const mapStateToProps = state => ({ schools: state.schools });
 
 export default connect(mapStateToProps)(Schools);
