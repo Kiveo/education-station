@@ -38,8 +38,10 @@ export default class Schools extends Component {
     console.log('state sch: ', schools)
     return (
         <div className="schools">
-          <Header className="schools-header" header='Welcome Back To School!' />
-          <WelcomeMessage className="welcome" />
+          <section className="schools-section">
+            <Header header='Education Station' />
+            <WelcomeMessage welcomeClasses="schools-welcome" />
+          </section>
           <section className="schools-section" id='school-list'> 
             <Title title='Schools'/>
             {isLoading ? 

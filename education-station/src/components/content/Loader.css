@@ -1,20 +1,25 @@
 .loader {
   text-align: center;
   height: 100%;
+  width: 100%;
 }
 
 .loader-image {
   height: 20vmin;
   animation: loader-frames 1s infinite alternate;
-  margin-top: 20vh; 
+  background-image: url(../../assets/images/background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @keyframes loader-frames {
   from {
+    background: #FBC691;
+    border: 10px dotted hotpink;
     border-radius: 0%;
   }
   to {
-    background: rgba(255, 100, 255, 1);
+    border: 10px double rgba(0, 0, 0, 1);
     border-radius: 50%;
   }
 }

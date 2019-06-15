@@ -1,19 +1,45 @@
 .schools {
   min-height: 100vh;
   height: 100%;
-  width: 900px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
-  /* flex-direction: column;  */
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
-.schools-header {
-  flex: 1;
+.schools-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
+
+.schools header {
+  flex: 1;
+  font-size: 2em;
+}
+
+.schools-welcome {
+  flex: 2;
+  font-size: 1.3em;
+  min-width: 300px;
+  align-self: flex-start;
+  text-align: justify;
+}
+
 
 #school-list {
-  flex: 2;
-  background: grey;
+  flex: 1;
+  flex-direction: column;
+  background: rgba(255, 180, 120, 0.6);
+  justify-content: space-around;
+  padding: 1em;
+}
+
+/* If the screen size is 600px wide or less */
+@media screen and (max-width: 900px) {
+  .schools-section {
+    padding: 1em;
+  }
 }
