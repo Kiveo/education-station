@@ -16,13 +16,13 @@ class Schools extends Component {
   render() {
     const { isLoading } = this.state;
     const { schools } = this.props;
-    const renderSchools = schools ? schools.map((sch) => {
-      return (
-        <School 
-          school={sch}
+    const renderSchools = schools ? schools.map((sch) => (
+      <li>
+      <School 
+        school={sch}
         />
-      )
-    }) : 'Not available'
+      </li>
+    )) : 'Not available'
     
     console.log('plural: ', schools)
     return (
