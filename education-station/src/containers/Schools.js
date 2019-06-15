@@ -5,8 +5,7 @@ import {
   Header, Loader, Title, WelcomeMessage,
 } from '../components/content';
 import School from '../components/School';
-import { getSchools } from '../redux/actions/index';
-
+import { getSchoolsRequest } from '../redux/actions/schoolActions';
 import './Schools.css';
 
 class Schools extends Component {
@@ -17,6 +16,10 @@ class Schools extends Component {
     };
   }
 
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(getSchoolsRequest());
+  }
 
   render() {
     const { isLoading } = this.state;
