@@ -20,15 +20,23 @@
 }
 
 .home-link {
+  position: absolute;
+  top: 15vh;
   text-decoration: none;
   color: white;
   padding: 1%;
   transition-duration: 1.5s;
+  border-radius: 0.5em;
+  width: 50%;
 }
 
 .home-link:hover {
-  color: black;
-  border: 10px dashed orangered;
-  padding: 5%;
-  border-radius: 0.5em;
+  background-color: rgb(100, 59, 100, 0.6);
+  border: 5px dashed rgb(255, 150, 150);
+  width: 80%;
+  border-right: none;
+  border-left: none;
+  text-align: center;
+  top: 20vh;
+  border-radius: 0.3em;
 }
