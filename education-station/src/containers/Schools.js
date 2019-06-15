@@ -6,26 +6,16 @@ import './Schools.css';
 import { connect } from 'react-redux';
 
 class Schools extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      isLoading: true,
-      schools: [],
+      isLoading: false,
     }
   }
 
-  componentDidMount() {
-    this.setState({
-      schools: [],
-    })
-  }
-
-  componentDidUpdate() {
-    console.log('update: ', this.state)
-  }
-  
   render() {
-    const { isLoading, schools } = this.state;
+    const { isLoading } = this.state;
+    const { schools } = this.props;
     const renderSchools = schools ? schools.map((sch) => {
       return (
         <School 
@@ -34,7 +24,7 @@ class Schools extends Component {
       )
     }) : 'Not available'
     
-    console.log('state sch: ', schools)
+    console.log('plural: ', schools)
     return (
         <div className="schools">
           <section className="schools-section">
@@ -57,5 +47,9 @@ class Schools extends Component {
 const mapStateToProps = state => {
   return { schools: state.schools }  
 }
+
+const mapDispatchToProps = dispatch => {
+  return (dispatch('action'))
+};
 
 export default connect(mapStateToProps)(Schools);
