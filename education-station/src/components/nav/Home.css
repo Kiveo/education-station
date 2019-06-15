@@ -1,5 +1,6 @@
 .home {
-  text-align: center;
+  height: 100%;
+  width: 100%;
 }
 
 .home-header {
@@ -10,33 +11,38 @@
   width: 100%;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
   font-weight: bold;
-  font-size: 10vh;
 }
 
 .home-link {
-  position: absolute;
-  top: 15vh;
+  display: block;
   text-decoration: none;
   color: white;
-  padding: 1%;
   transition-duration: 1.5s;
   border-radius: 0.5em;
-  width: 50%;
+  font-size: 6vw;
+  width: 100%;
+  text-align: center;
+  margin: 0 0 2em 0;
 }
 
 .home-link:hover {
-  background-color: rgb(100, 59, 100, 0.6);
+  background-color: #F6E0B6;
+  color: black;
   border: 5px dashed rgb(255, 150, 150);
   width: 80%;
   border-right: none;
   border-left: none;
   text-align: center;
-  top: 20vh;
   border-radius: 0.3em;
+}
+
+/* If the screen size is 600px wide or less */
+@media screen and (max-width: 600px) {
+  .home-link {
+    font-size: 10vw;
+  }
 }
