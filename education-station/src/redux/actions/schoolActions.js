@@ -1,4 +1,4 @@
-import { GET_SCHOOLS_REQUEST, GET_SCHOOLS_SUCCESS } from '../constants/schoolConstants';
+import { GET_SCHOOLS_REQUEST, GET_SCHOOLS_SUCCESS, GET_SCHOOLS_FAILURE } from '../constants/schoolConstants';
 
 
 export function getSchoolsRequest() {
@@ -7,4 +7,8 @@ export function getSchoolsRequest() {
 
 export function getSchoolsSuccess(schools) {
   return { type: GET_SCHOOLS_SUCCESS, schools };
+}
+
+export function getSchoolsFailure(message) {
+  return { type: GET_SCHOOLS_FAILURE, message };
 }

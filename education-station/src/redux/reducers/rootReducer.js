@@ -1,11 +1,11 @@
-import { GET_SCHOOLS_REQUEST, GET_SCHOOLS_SUCCESS } from '../constants/schoolConstants';
+import { GET_SCHOOLS_REQUEST, GET_SCHOOLS_SUCCESS, GET_SCHOOLS_FAILURE } from '../constants/schoolConstants';
 
 const initialState = {
   schools: [],
 };
 
 function rootReducer(state = initialState, action) {
-  console.log('reducer::action, ', action.type);
+  console.log('rooReducer::action.type = ', action.type);
   switch (action.type) {
     case GET_SCHOOLS_REQUEST: {
       return state;
@@ -13,6 +13,10 @@ function rootReducer(state = initialState, action) {
 
     case GET_SCHOOLS_SUCCESS: {
       return { ...state, schools: action.response.Schools };
+    }
+
+    case GET_SCHOOLS_FAILURE: {
+      return { ...state, error: action.message };
     }
 
     default:

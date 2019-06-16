@@ -24,15 +24,13 @@ class Schools extends Component {
   render() {
     const { isLoading } = this.state;
     const { schools } = this.props;
+
     const renderSchools = schools ? schools.map(sch => (
-      <li>
-        <School
-          school={sch}
-        />
-      </li>
+      <div className="school" key={sch.Id}>
+        <School school={sch} />
+      </div>
     )) : 'Not available';
 
-    console.log('plural: ', schools);
     return (
       <div className="schools">
         <section className="schools-section">
@@ -54,11 +52,12 @@ class Schools extends Component {
 
 Schools.propTypes = {
   schools: PropTypes.arrayOf(PropTypes.shape({
-    Id: PropTypes.number.isRequired,
     Name: PropTypes.string.isRequired,
+    Id: PropTypes.string.isRequired,
     Description: PropTypes.string.isRequired,
     IsOpen: PropTypes.bool,
     teachers: PropTypes.array,
+    dispatch: PropTypes.func,
   })),
 };
 

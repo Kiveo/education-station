@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { GET_SCHOOLS_REQUEST, GET_SCHOOLS_SUCCESS } from '../redux/constants/schoolConstants';
+import { GET_SCHOOLS_REQUEST, GET_SCHOOLS_SUCCESS, GET_SCHOOLS_FAILURE } from '../redux/constants/schoolConstants';
 import fetchSchools from '../containers/helpers/fetchSchools';
 import { requestPath } from '../containers/api';
 
@@ -12,8 +12,7 @@ function* getSchools() {
     }
     yield put({ type: GET_SCHOOLS_SUCCESS, response });
   } catch (e) {
-    console.log(':::e', e.message);
-    yield put({ type: 'GET_SCHOOLS_FAIL', message: e.message });
+    yield put({ type: GET_SCHOOLS_FAILURE, message: e.message });
   }
 }
 
