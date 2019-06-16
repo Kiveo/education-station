@@ -11,7 +11,9 @@ const notEnrolledStyle = {
 const Student = ({ student }) => (
   <Fragment>
     <div className="flex-wrapper">
-      <p style={{ maxWidth: '70%' }}>{student.Name}</p>
+      <p style={{ textAlign: 'left', maxWidth: '80%' }}>
+        {student.Name}
+      </p>
       {student.IsEnrolled ? <div style={enrolledStyle} /> : <div style={notEnrolledStyle} />}
     </div>
     <hr style={{ height: '0.5em', background: '#FBA28D' }} />
