@@ -22,10 +22,10 @@ const School = ({ school }) => {
     <Fragment>
       <div className="school-div">
         <Title title={school.Name} titleClasses={titleClass} />
-        {renderStatus}
+        <p className="school-p">{school.Description}</p>
       </div>
-      <p className="school-p">{school.Description}</p>
-      <Button handler={toggleTeachers} text="Show/Hide Teachers" />
+      {renderStatus}
+      <Button handler={toggleTeachers} text={`Show/Hide ${school.Name} Teachers`} />
       {teachersVisible
       && <Teachers teachers={school.Teachers} />
       }

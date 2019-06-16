@@ -5,7 +5,6 @@ const initialState = {
 };
 
 function rootReducer(state = initialState, action) {
-  console.log('rooReducer::action.type = ', action.type);
   switch (action.type) {
     case GET_SCHOOLS_REQUEST: {
       return state;

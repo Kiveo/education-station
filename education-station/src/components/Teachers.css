@@ -2,16 +2,43 @@
   display: flex;
   justify-content: space-evenly;
   background: #F6E0B6;
+  padding-bottom: 1em;
+  min-height: 150px;
 }
 
 .teacher {
-  /* font-weight: bold; */
-
   font-size: 1.4em;
+  width: 100%;
+  text-align: justify;
+}
+
+.teacher-p {  
+  background: #F6E0B6;
+  color: black;
+  text-align: justify;
+}
+
+.teacher-p--active {  
+  text-align: justify;
+  color: white;
+  margin-bottom: 0.5em;
 }
 
 .teacher-p::before {
   content: ' > ';
   color: orangered;
   font-weight: 900;
+}
+
+.teacher-p--active::before {
+  content: ' v ';
+  color: orange;
+  font-weight: 900;
+}
+
+/* If the screen size is 600px wide or less */
+@media screen and (max-width: 600px) {
+  .teachers {
+    flex-direction: column;
+  }
 }

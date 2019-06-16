@@ -1,18 +1,21 @@
 .button {
   padding: 0.5em;
-  color: white;
-  background: rgba(255, 100, 100, 0.5);
   border: none;
   font-weight: bold;
   font-size: 1.1em;
   width: 100%;
   text-align: center;
+  /* color: black; */
+  color: white;
+  background: #e74c3c;
 }
 
 .button:hover {
-  background: rgba(255, 100, 100, 1);
+  color: white;
+  background: rgba(255, 100, 100, 0.5);
+  /* background: rgba(255, 100, 100, 1); */
 }
 
 .button:active {
-  color: rgba(100, 50, 100);
+  /* color: black; */
 }

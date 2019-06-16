@@ -4,6 +4,7 @@ import Student from './Student';
 
 const renderStudents = students => (students && students.map(stud => (
   <div key={stud.Id}>
+    {console.log(stud)}
     <Student student={stud} />
   </div>
 )));

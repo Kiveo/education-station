@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Title = ({ title, titleClasses }) => (
-  <h2 className={titleClasses} style={{ textAlign: 'center' }}>{title}</h2>
+  <h2 className={titleClasses}>{title}</h2>
 );
 
 export default Title;

@@ -2,17 +2,35 @@
   width: 100%;
 }
 
+.school-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .school-title {
-  color: orangered;
-  font-size: 2em;
+  font-size: 1.5em;
+  width: 25vw;
 }
 
 .school-title--red {
-  color: red;
+  color: rgba(150, 0, 0, 0.8);
+  width: 25vw;
 }
 
-.school-div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.school-p {
+  flex: 2;
+  font-size: 1.3em;
+  width: 60vw;
+}
+
+/* If the screen size is 600px wide or less */
+@media screen and (max-width: 900px) {
+  .school-title {
+    flex: 2;
+  }
+  .school-title--red {
+    flex: 2;
+  }
 }
