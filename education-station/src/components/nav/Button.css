@@ -1,0 +1,18 @@
+.button {
+  padding: 0.5em;
+  color: white;
+  background: rgba(255, 100, 100, 0.5);
+  border: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  width: 100%;
+  text-align: center;
+}
+
+.button:hover {
+  background: rgba(255, 100, 100, 1);
+}
+
+.button:active {
+  color: rgba(100, 50, 100);
+}

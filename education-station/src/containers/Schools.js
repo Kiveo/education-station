@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import {
   Header, Loader, WelcomeMessage,
 } from '../components/content';
-import School from '../components/School';
+import School from './School';
 import { getSchoolsRequest } from '../redux/actions/schoolActions';
 import './Schools.css';
 
@@ -16,15 +16,18 @@ class Schools extends Component {
     };
   }
 
+  // LIFECYCLE
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(getSchoolsRequest());
   }
 
   render() {
+    // DESTRUCTURING PROPS & STATE
     const { isLoading } = this.state;
     const { schools } = this.props;
 
+    // DECLUTTER: extracting logic fluff from render
     const renderSchools = schools ? schools.map(sch => (
       <div className="school" key={sch.Id}>
         <School school={sch} />

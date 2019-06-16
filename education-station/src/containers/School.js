@@ -1,12 +1,22 @@
-import React, { Fragment } from 'react';
+import React, { useState, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Teachers from './Teachers';
-import { Title } from './content';
+import Teachers from '../components/Teachers';
+import { Title } from '../components/content';
 import './School.css';
+import Button from '../components/nav/Button';
 
 const School = ({ school }) => {
+  // STATE
+  const [teachersVisible, setTeachersVisible] = useState(false);
+
+  // Handlers & Toggles
+  const toggleTeachers = () => {
+    setTeachersVisible(!teachersVisible);
+  };
+
+  // Render Logic
   const titleClass = !school.IsOpen ? 'school-title--red' : 'school-title';
-  const renderStatus = !school.IsOpen ? '(Status: Closed)' : '(Status: Open)';
+  const renderStatus = !school.IsOpen ? 'Status: (Closed)' : 'Status: (Open)';
 
   return (
     <Fragment>
@@ -15,7 +25,10 @@ const School = ({ school }) => {
         {renderStatus}
       </div>
       <p className="school-p">{school.Description}</p>
-      <Teachers teachers={school.Teachers} />
+      <Button handler={toggleTeachers} text="Show/Hide Teachers" />
+      {teachersVisible
+      && <Teachers teachers={school.Teachers} />
+      }
     </Fragment>
   );
 };

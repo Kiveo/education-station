@@ -1,0 +1,17 @@
+.teachers {
+  display: flex;
+  justify-content: space-evenly;
+  background: #F6E0B6;
+}
+
+.teacher {
+  /* font-weight: bold; */
+
+  font-size: 1.4em;
+}
+
+.teacher-p::before {
+  content: ' > ';
+  color: orangered;
+  font-weight: 900;
+}

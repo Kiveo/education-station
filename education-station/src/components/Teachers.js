@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Teacher from './Teacher';
+import './Teachers.css';
 
 const renderTeachers = teachers => (teachers.map(teach => (
   <div className="teacher" key={teach.Id}>
