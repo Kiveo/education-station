@@ -7,6 +7,7 @@ const Teacher = ({ teacher }) => {
   // STATE
   const [studentsVisible, setStudentsVisible] = useState(false);
 
+  // Handlers & Toggles
   const showStudents = () => {
     setStudentsVisible(!studentsVisible);
   };

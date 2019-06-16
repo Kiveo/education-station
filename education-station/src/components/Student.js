@@ -18,10 +18,11 @@ const Student = ({ student }) => (
 
 export default Student;
 
-// Name,
+// Name, Id, IsEnrolled
 Student.propTypes = {
   student: PropTypes.shape({
     Name: PropTypes.string,
+    Id: PropTypes.string,
     IsEnrolled: PropTypes.bool,
   }).isRequired,
 };

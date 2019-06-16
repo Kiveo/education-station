@@ -59,12 +59,13 @@ Schools.propTypes = {
     Description: PropTypes.string.isRequired,
     IsOpen: PropTypes.bool,
     teachers: PropTypes.array,
-    dispatch: PropTypes.func,
   })),
+  dispatch: PropTypes.func,
 };
 
 Schools.defaultProps = {
   schools: [],
+  dispatch: null,
 };
 
 const mapStateToProps = state => ({ schools: state.schools });
