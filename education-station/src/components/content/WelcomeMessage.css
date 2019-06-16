@@ -7,7 +7,7 @@
 /* instructions text */
 .instructions .instructions-text {
   visibility: hidden;
-  display: none;
+  display: none;  
   width: 120px;
   background-color: black;
   color: #fff;
