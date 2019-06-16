@@ -1,19 +1,20 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Teachers from './Teachers';
+import { Title } from './content';
+import './School.css';
 
 const School = ({ school }) => {
-  const headerStyle = !school.IsOpen ? { color: 'red' } : null;
-  const renderName = `${school.Name} ${!school.IsOpen && '(Closed)'}`;
+  const titleClass = !school.IsOpen ? 'school-title--red' : 'school-title';
+  const renderStatus = !school.IsOpen ? '(Status: Closed)' : '(Status: Open)';
 
   return (
     <Fragment>
       <div className="school-div">
-        <h4 style={headerStyle} className="school-header">
-          {renderName}
-        </h4>
-        <p className="school-p">{school.Description}</p>
+        <Title title={school.Name} titleClasses={titleClass} />
+        {renderStatus}
       </div>
+      <p className="school-p">{school.Description}</p>
       <Teachers teachers={school.Teachers} />
     </Fragment>
   );

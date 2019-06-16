@@ -1,0 +1,17 @@
+.school {
+  width: 100%;
+}
+
+.school-title {
+  color: orangered;
+}
+
+.school-title--red {
+  color: red;
+}
+
+.school-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

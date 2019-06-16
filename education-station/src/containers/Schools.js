@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
-  Header, Loader, Title, WelcomeMessage,
+  Header, Loader, WelcomeMessage,
 } from '../components/content';
 import School from '../components/School';
 import { getSchoolsRequest } from '../redux/actions/schoolActions';
@@ -38,7 +38,6 @@ class Schools extends Component {
           <WelcomeMessage welcomeClasses="schools-welcome" />
         </section>
         <section className="schools-section" id="school-list">
-          <Title title="Schools" />
           {isLoading
             ? <Loader />
             : renderSchools

@@ -37,6 +37,8 @@
   padding: 1em;
 }
 
+/* ---------MEDIA QUERIES----------- */
+
 /* If the screen size is 600px wide or less */
 @media screen and (max-width: 900px) {
   .schools-section {
